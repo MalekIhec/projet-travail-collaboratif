@@ -45,6 +45,13 @@ df_ventes.describe(include=["object"])
 
 # In[45]:
 
+# Créer une colonne date
+df_ventes['date_transaction'] = pd.to_datetime(df_ventes['date_transaction'])
+df_ventes['mois'] = df_ventes['date_transaction'].dt.month
+df_ventes['année'] = df_ventes['date_transaction'].dt.year
+
+print("Colonne date ajoutée !")
+print(df_ventes.head())
 
 df_clients.isnull().sum()
 
