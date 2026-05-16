@@ -225,11 +225,16 @@ st.title ("Data Dashboard")
 st.write(df_final)
 
 
-# # Dashboard Interactif Streamlit
 
 # In[68]:
 
+# Calculer la satisfaction moyenne par produit
+satisfaction_produit = df_final.groupby('Product_Name')['satisfaction'].mean()
 
+print("\n📊 Satisfaction moyenne par produit :")
+print(satisfaction_produit.round(2))
+
+# # Dashboard Interactif Streamlit
 st.set_page_config(page_title="Dashboard Ventes", layout="wide")
 st.title("📊 Data Dashboard")
 
